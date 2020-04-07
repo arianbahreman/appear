@@ -1,5 +1,5 @@
 # appear
-Appear elements on entering into frame
+Appear DOM elements when they are visible in window's frame.
 
 ## Usage
 
@@ -19,12 +19,14 @@ Javascript
 
 ```js
 
-import Appear from 'appear';
+import appearanceObserver from './path-to-appear/Appear.ts';
 
-Appear.init();
+/*
+  Will automatically observe current DOM elements which has data-appear attribute
+*/
+const appear = appearanceObserver();
 
-window.addEventListener('scroll', () => 
-{
-  Appear.update();
-});
-```
+/*
+  Adding new element to observe
+*/
+appear.addItem(img);
