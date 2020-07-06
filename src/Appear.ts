@@ -1,5 +1,18 @@
+type AppearanceEvents = {
+  [key: string]: Function
+}
+
 export default function appearanceObserver()
 {
+  /*
+    Event Listener
+  */
+  var events: AppearanceEvents = {};
+
+  const on = (event: string, handler: Function) => {
+    events[event] = handler;
+  }
+
   /*
     Default Options
   */
@@ -36,6 +49,17 @@ export default function appearanceObserver()
         {
           item.setAttribute('data-appear-init', '1');
           item.classList.add('appear');
+
+          /*
+            Appear Event
+          */
+          events.appear && events.appear(item);
+
+          /*
+            Custom Event
+          */
+          const event = item.getAttribute('data-appear-event');
+          event && events[event] && events[event](item);
         }
       }
       else
@@ -56,7 +80,7 @@ export default function appearanceObserver()
   /*
     Observe Item
   */
-  const addItem = (item) =>
+  const addItem = (item: Element) =>
   {
     item.setAttribute('data-appear-init', '0');
     observer.observe(item);
@@ -64,5 +88,5 @@ export default function appearanceObserver()
 
   document.querySelectorAll('[data-appear]').forEach(item => addItem(item));
 
-  return { version: 2.0, addItem };
+  return { addItem, on };
 }

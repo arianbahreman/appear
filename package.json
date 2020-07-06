@@ -1,0 +1,32 @@
+{
+  "name": "ab-appear",
+  "version": "2.1.0",
+  "description": "Appear DOM Elements",
+  "author": "Arian Bahreman <arian.bahreman@ymail.com>",
+  "keywords": [
+    "appear",
+    "appearance",
+    "dom"
+  ],
+  "main": "lib/Appear.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://arianbahreman:M%21RRT%40zQz2LssXFUH0AE@github.com/arianbahreman/appear.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arianbahreman/appear/issues"
+  },
+  "homepage": "https://github.com/arianbahreman/appear#readme",
+  "devDependencies": {
+    "typescript": "^3.9.6"
+  },
+  "files": [
+    "lib/**"
+  ],
+  "dependencies": {}
+}
