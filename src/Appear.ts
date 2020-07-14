@@ -20,23 +20,20 @@ export default function appearanceObserver()
     threshold: 0.0000001
   }
 
-  const observer = new IntersectionObserver(entries =>
-  {
+  const observer = new IntersectionObserver(entries => {
     /*
       Frame Dimensions
     */
-    const frame =
-    {
-      width: window.innerWidth
-    ,
+    const frame = {
+      width: window.innerWidth,
       height: window.innerHeight
     };
 
     /*
       Intersection Entries
     */
-    entries.forEach(entry =>
-    {
+    entries.forEach(entry => {
+
       const item = entry.target;
       const bounding   = item.getBoundingClientRect();
       const appearOnce = item.getAttribute('data-appear-once') === '';
